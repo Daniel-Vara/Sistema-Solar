@@ -1,0 +1,36 @@
+
+/* Estiliza e centraliza o elemento .box na tela */
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: blue;
+
+  /* Usa position: absolute para permitir posicionamento com top e left */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  /* Usa translate(-50%, -50%) para ajustar o ponto de referência do centro do quadrado */
+  transform: translate(-50%, -50%);
+
+  /* Aplica a animação circularMotion */
+  animation: circularMotion 4s infinite linear;
+  /* 
+     - Nome da animação: circularMotion
+     - Duração: 4 segundos
+     - Repetição: infinite (repetirá indefinidamente)
+     - Tipo de movimento: linear (a animação ocorre em uma velocidade constante)
+  */
+}
+/* Define a animação usando @keyframes */
+@keyframes circularMotion {
+  0% {
+      /* Centraliza o quadrado na tela e inicia sua rotação em 0 graus */
+      transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
+  }
+  100% {
+      /* Realiza a rotação completa de 360 graus e o movimento circular */
+      transform: translate(-50%, -50%) rotate(360deg) translate(100px) rotate(360deg);
+  }
+}
