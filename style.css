@@ -1,36 +1,75 @@
+body {
+  background-image: url(./img/estrelas-e-galaxia-espaco-sideral-ceu-noite-universo-preto_146539-811.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Evita barras de rolagem */
+}
 
-/* Estiliza e centraliza o elemento .box na tela */
 .box {
+  position: relative; /* Permite posicionamento absoluto dos filhos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Alterado para 100vh para ocupar toda a tela */
+}
+
+.gif-sol {
   width: 100px;
   height: 100px;
-  border-radius: 100px;
-  background-color: blue;
-
-  /* Usa position: absolute para permitir posicionamento com top e left */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  
-  /* Usa translate(-50%, -50%) para ajustar o ponto de referência do centro do quadrado */
-  transform: translate(-50%, -50%);
-
-  /* Aplica a animação circularMotion */
-  animation: circularMotion 4s infinite linear;
-  /* 
-     - Nome da animação: circularMotion
-     - Duração: 4 segundos
-     - Repetição: infinite (repetirá indefinidamente)
-     - Tipo de movimento: linear (a animação ocorre em uma velocidade constante)
-  */
+  z-index: 10; /* Garante que o Sol fique acima das órbitas */
+  animation: pulsar 2s infinite alternate; /* Animação adicional para o Sol */
 }
-/* Define a animação usando @keyframes */
-@keyframes circularMotion {
-  0% {
-      /* Centraliza o quadrado na tela e inicia sua rotação em 0 graus */
-      transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
+
+.orbita-mercurio {
+  position: absolute;
+  width: 200px; /* Diâmetro da órbita de Mercúrio */
+  height: 200px;
+  border-radius: 50%;
+  animation: orbit 4s linear infinite;
+}
+
+.merc {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  top: -15px; /* Posiciona Mercúrio no topo da órbita */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Animações */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-      /* Realiza a rotação completa de 360 graus e o movimento circular */
-      transform: translate(-50%, -50%) rotate(360deg) translate(100px) rotate(360deg);
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@keyframes pulsar {
+  from {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+/* Opcional: linha da órbita (para visualização durante desenvolvimento) */
+.orbita-mercurio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
 }
