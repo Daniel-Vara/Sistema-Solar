@@ -4,14 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Sistema Solar Animado</title>
+    <title>Sistema Solar</title>
 </head>
 <body>
-    <div class="box">
-        <img class="gif-sol" src="./img/Sol.gif" alt="Sol">
-        <div class="orbita-mercurio">
-            <img class="merc" src="./img/mercurio.webp" alt="Mercúrio">
+    <div class="container">
+        <div class="box">
+            <img class="gif-sol" src="./img/Sol.gif" alt="Sol">
+            
+            <div class="orbita orbita-mercurio">
+                <img class="planeta merc" src="./img/mercurio 3.png" alt="Mercúrio">
+            </div>
+            
+            <div class="orbita orbita-venus">
+                <img class="planeta ven" src="./img/venus.png" alt="Vênus">
+            </div>
+            
+            <div class="orbita orbita-terra">
+                <img class="planeta ter" src="./img/terra.png" alt="Terra">
+            </div>
+            
+            <div class="orbita orbita-marte">
+                <img class="planeta mar" src="./img/marte.png" alt="Marte">
+            </div>
+            
+            <div class="orbita orbita-jupiter">
+                <img class="planeta jup" src="./img/jupiter.png" alt="Júpiter">
+            </div>
+            
+            <div class="orbita orbita-saturno">
+                <img class="planeta sat" src="./img/saturno.png" alt="Saturno">
+            </div>
+            
+            <div class="orbita orbita-urano">
+                <img class="planeta ura" src="./img/urano.png" alt="Urano">
+            </div>
+            
+            <div class="orbita orbita-netuno">
+                <img class="planeta net" src="./img/netuno.png" alt="Netuno">
+            </div>
         </div>
+
+        <section class="info-planetas">
+            <div class="tabela">
+                <h2>Informações Planetárias</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Planeta</th>
+                            <th>Tipo</th>
+                            <th>Diâmetro</th>
+                            <th>Período Orbital</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/mercurio 3.png" alt="Mercúrio"> Mercúrio</td>
+                            <td data-label="Tipo">Terrestre</td>
+                            <td data-label="Diâmetro">4.879 km</td>
+                            <td data-label="Período Orbital">88 dias</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/venus.png" alt="Vênus"> Vênus</td>
+                            <td data-label="Tipo">Terrestre</td>
+                            <td data-label="Diâmetro">12.104 km</td>
+                            <td data-label="Período Orbital">225 dias</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/terra.png" alt="Terra"> Terra</td>
+                            <td data-label="Tipo">Terrestre</td>
+                            <td data-label="Diâmetro">12.742 km</td>
+                            <td data-label="Período Orbital">365 dias</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/marte.png" alt="Marte"> Marte</td>
+                            <td data-label="Tipo">Terrestre</td>
+                            <td data-label="Diâmetro">6.779 km</td>
+                            <td data-label="Período Orbital">687 dias</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/jupiter.png" alt="Júpiter"> Júpiter</td>
+                            <td data-label="Tipo">Gasoso</td>
+                            <td data-label="Diâmetro">139.820 km</td>
+                            <td data-label="Período Orbital">12 anos</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/saturno.png" alt="Saturno"> Saturno</td>
+                            <td data-label="Tipo">Gasoso</td>
+                            <td data-label="Diâmetro">116.460 km</td>
+                            <td data-label="Período Orbital">29 anos</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/urano.png" alt="Urano"> Urano</td>
+                            <td data-label="Tipo">Gelo</td>
+                            <td data-label="Diâmetro">50.724 km</td>
+                            <td data-label="Período Orbital">84 anos</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Planeta"><img src="./img/netuno.png" alt="Netuno"> Netuno</td>
+                            <td data-label="Tipo">Gelo</td>
+                            <td data-label="Diâmetro">49.244 km</td>
+                            <td data-label="Período Orbital">165 anos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
 </body>
 </html>

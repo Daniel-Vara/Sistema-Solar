@@ -1,75 +1,372 @@
+:root {
+    --sol-size: 8vmin;
+    --mercury-size: 2vmin;
+    --venus-size: 2.5vmin;
+    --earth-size: 2.8vmin;
+    --mars-size: 2.4vmin;
+    --jupiter-size: 5vmin;
+    --saturn-size: 4.5vmin;
+    --uranus-size: 3.5vmin;
+    --neptune-size: 3.4vmin;
+}
+
 body {
-  background-image: url(./img/estrelas-e-galaxia-espaco-sideral-ceu-noite-universo-preto_146539-811.avif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden; /* Evita barras de rolagem */
+    background-image: url(./img/Universo.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
 }
 
 .box {
-  position: relative; /* Permite posicionamento absoluto dos filhos */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Alterado para 100vh para ocupar toda a tela */
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gif-sol {
-  width: 100px;
-  height: 100px;
-  z-index: 10; /* Garante que o Sol fique acima das órbitas */
-  animation: pulsar 2s infinite alternate; /* Animação adicional para o Sol */
+    width: var(--sol-size);
+    height: var(--sol-size);
+    z-index: 10;
+    animation: pulsar 2s infinite alternate;
 }
 
+.orbita {
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit linear infinite;
+}
+
+.planeta {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+/* Configurações das órbitas */
 .orbita-mercurio {
-  position: absolute;
-  width: 200px; /* Diâmetro da órbita de Mercúrio */
-  height: 200px;
-  border-radius: 50%;
-  animation: orbit 4s linear infinite;
+    width: 15vmin;
+    height: 15vmin;
+    animation-duration: 2.4s;
 }
 
 .merc {
-  position: absolute;
-  width: 70px;
-  height: 40px;
-  top: -15px; /* Posiciona Mercúrio no topo da órbita */
-  left: 50%;
-  transform: translateX(-50%);
+    top: calc(-1 * var(--mercury-size)/2);
+    width: var(--mercury-size);
+    height: var(--mercury-size);
 }
 
-/* Animações */
+.orbita-venus {
+    width: 20vmin;
+    height: 20vmin;
+    animation-duration: 6.2s;
+}
+
+.ven {
+    top: calc(-1 * var(--venus-size)/2);
+    width: var(--venus-size);
+    height: var(--venus-size);
+}
+
+.orbita-terra {
+    width: 26vmin;
+    height: 26vmin;
+    animation-duration: 10s;
+}
+
+.ter {
+    top: calc(-1 * var(--earth-size)/2);
+    width: var(--earth-size);
+    height: var(--earth-size);
+}
+
+.orbita-marte {
+    width: 32vmin;
+    height: 32vmin;
+    animation-duration: 18.8s;
+}
+
+.mar {
+    top: calc(-1 * var(--mars-size)/2);
+    width: var(--mars-size);
+    height: var(--mars-size);
+}
+
+.orbita-jupiter {
+    width: 40vmin;
+    height: 40vmin;
+    animation-duration: 40.6s;
+}
+
+.jup {
+    top: calc(-1 * var(--jupiter-size)/2);
+    width: var(--jupiter-size);
+    height: var(--jupiter-size);
+}
+
+.orbita-saturno {
+    width: 48vmin;
+    height: 48vmin;
+    animation-duration: 60.5s;
+}
+
+.sat {
+    top: calc(-1 * var(--saturn-size)/2);
+    width: var(--saturn-size);
+    height: var(--saturn-size);
+}
+
+.orbita-urano {
+    width: 56vmin;
+    height: 56vmin;
+    animation-duration: 80s;
+}
+
+.ura {
+    top: calc(-1 * var(--uranus-size)/2);
+    width: var(--uranus-size);
+    height: var(--uranus-size);
+}
+
+.orbita-netuno {
+    width: 64vmin;
+    height: 64vmin;
+    animation-duration: 100s;
+}
+
+.net {
+    top: calc(-1 * var(--neptune-size)/2);
+    width: var(--neptune-size);
+    height: var(--neptune-size);
+}
+
 @keyframes orbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes pulsar {
-  from {
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  to {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
+    from {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    to {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
 }
 
-/* Opcional: linha da órbita (para visualização durante desenvolvimento) */
-.orbita-mercurio::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
+.orbita::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+/* Estilos da tabela */
+.info-planetas {
+    width: 40%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.tabela {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.tabela h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #4fc3f7;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabela tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tabela img {
+    width: 23px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    :root {
+        --sol-size: 10vmin;
+        --mercury-size: 2.2vmin;
+        --venus-size: 2.7vmin;
+        --earth-size: 3vmin;
+        --mars-size: 2.6vmin;
+        --jupiter-size: 5.5vmin;
+        --saturn-size: 5vmin;
+        --uranus-size: 4vmin;
+        --neptune-size: 3.8vmin;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+    
+    .box {
+        width: 100%;
+        height: 60vh;
+        transform: scale(0.9);
+    }
+    
+    .info-planetas {
+        width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+    
+    .tabela {
+        padding: 1rem;
+    }
+    
+    /* Estilos responsivos para tabela */
+    .tabela table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .tabela th, 
+    .tabela td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .tabela img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --sol-size: 12vmin;
+        --mercury-size: 2.5vmin;
+        --venus-size: 3vmin;
+        --earth-size: 3.3vmin;
+        --mars-size: 2.9vmin;
+        --jupiter-size: 6vmin;
+        --saturn-size: 5.5vmin;
+        --uranus-size: 4.5vmin;
+        --neptune-size: 4.2vmin;
+    }
+    
+    .box {
+        transform: scale(0.8);
+    }
+    
+    .orbita::before {
+        border-width: 0.5px;
+    }
+    
+    .tabela {
+        padding: 0.5rem;
+    }
+    
+    .tabela h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .tabela th, 
+    .tabela td {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .tabela img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .tabela table, 
+    .tabela thead, 
+    .tabela tbody, 
+    .tabela th, 
+    .tabela td, 
+    .tabela tr {
+        display: block;
+    }
+    
+    .tabela thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .tabela tr {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        margin-bottom: 0.5rem;
+    }
+    
+    .tabela td {
+        border: none;
+        position: relative;
+        padding-left: 40%;
+        white-space: normal;
+        text-align: left;
+    }
+    
+    .tabela td:before {
+        position: absolute;
+        left: 10px;
+        width: 35%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        color: #4fc3f7;
+    }
 }
